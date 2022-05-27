@@ -1,0 +1,28 @@
+.users,
+.chatInputs {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+label + input {
+    margin-left: 5px;
+}
+
+#chat {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+#conversationDiv {
+    margin-top: 30px;
+}
+
+#author {
+    font-weight: bold;
+}
+
+#timestamp {
+    font-style: italic;
+}

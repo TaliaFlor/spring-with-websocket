@@ -1,20 +1,21 @@
 <html>
 <head>
     <title>Chat WebSocket</title>
+    <link rel="stylesheet" href="styles.css">
     <script defer src="lib/sockjs-0.3.4.js"></script>
     <script defer src="lib/stomp.js"></script>
-    <script defer src="app.js"></script>
+    <script defer src="script.js"></script>
 </head>
 <body onload="disconnect()">
 <div>
-    <div>
+    <div class="users">
         <div>
-            <label for="from1">User 1</label>
-            <input type="text" id="from1" placeholder="Choose a nickname"/>
+            <label for="from1">User 1:</label>
+            <input type="text" id="from1" placeholder="Choose a username"/>
         </div>
         <div>
-            <label for="from2">User 2</label>
-            <input type="text" id="from2" placeholder="Choose a nickname"/>
+            <label for="from2">User 2:</label>
+            <input type="text" id="from2" placeholder="Choose a username"/>
         </div>
     </div>
     <br/>
@@ -26,10 +27,24 @@
     </div>
     <br/>
     <div id="conversationDiv">
-        <label for="text">Message</label>
-        <input type="text" id="text" placeholder="Write a message..."/>
-        <button id="sendMessage" onclick="sendMessage();">Send</button>
-        <p id="response"></p>
+        <div class="chatInputs">
+            <div id="send1">
+                <label for="text1">Message (User 1): </label>
+                <input type="text" id="text1" placeholder="Write a message..."/>
+                <button id="sendMessage1" onclick="sendMessage('from1', 'text1');">Send</button>
+            </div>
+            <div id="send2">
+                <label for="text2">Message (User 2): </label>
+                <input type="text" id="text2" placeholder="Write a message..."/>
+                <button id="sendMessage2" onclick="sendMessage('from2', 'text2');">Send</button>
+            </div>
+        </div>
+
+        <div id="chat">
+            <p id="author"></p>
+            <p id="response"></p>
+            <p id="timestamp"></p>
+        </div>
     </div>
 </div>
 
